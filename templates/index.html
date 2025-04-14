@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hand Cricket Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🏏 Hand Cricket Battle</h1>
+    <p class="score"><strong>{{ username }}:</strong> {{ user_score }} | <strong>{{ player2 }}:</strong> {{ computer_score }}</p>
+    <p class="score"><strong>Now Batting:</strong> {{ 'You' if batting == 'player1' else player2 }}</p>
+
+    {% if not game_over %}
+    <form method="post">
+      <label>Choose your number (1-6):</label><br>
+      <input type="number" name="choice" min="1" max="6" required><br>
+
+      {% if not vs_computer and batting == 'player1' %}
+        <label>{{ player2 }}'s number:</label>
+        <input type="number" name="player2_choice" min="1" max="6" required><br>
+      {% elif not vs_computer and batting == 'player2' %}
+        <label>{{ username }}'s bowl number:</label>
+        <input type="number" name="player2_choice" min="1" max="6" required><br>
+      {% endif %}
+
+      <button type="submit">🔥 Play Turn</button>
+    </form>
+    {% endif %}
+
+    <div class="message">{{ message }}</div>
+    {% if result %}<div class="result">{{ result }}</div>{% endif %}
+
+    <a href="{{ url_for('reset') }}">🔄 Restart Game</a> |
+    <a href="{{ url_for('leaderboard') }}">🏆 View Leaderboard</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaderboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>🏆 Game Leaderboard</h2>
+    <table>
+      <thead>
+        <tr><th>Player</th><th>Wins</th><th>Losses</th><th>Ties</th></tr>
+      </thead>
+      <tbody>
+      {% for user, stats in leaderboard.items() %}
+        <tr>
+          <td>{{ user }}</td>
+          <td>{{ stats.Win }}</td>
+          <td>{{ stats.Lose }}</td>
+          <td>{{ stats.Tie }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">← Back to Game</a>
+  </div>
+</body>
+</html>

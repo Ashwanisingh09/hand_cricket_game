@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toss Result</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>{{ winner }} won the toss!</h2>
+
+    {% if is_user %}
+    <form method="post">
+      <p>What would you like to do?</p>
+      <button type="submit" name="decision" value="Bat">Bat</button>
+      <button type="submit" name="decision" value="Bowl">Bowl</button>
+    </form>
+    {% else %}
+    {% set choice = ['Bat', 'Bowl'] | random %}
+    <form method="post">
+      <input type="hidden" name="decision" value="{{ choice }}">
+      <p>{{ winner }} chooses to {{ choice }}.</p>
+      <button type="submit">Continue</button>
+    </form>
+    {% endif %}
+  </div>
+</body>
+</html>

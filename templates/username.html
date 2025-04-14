@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter Players</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>🎮 Enter Player Info</h2>
+    <form method="post">
+      <input type="text" name="username" placeholder="Player 1 Name" required>
+      <input type="text" name="player2" placeholder="Player 2 Name (leave blank for Computer)">
+      <button type="submit">Start Toss</button>
+    </form>
+  </div>
+</body>
+</html>

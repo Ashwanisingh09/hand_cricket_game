@@ -1,0 +1,118 @@
+/* Reset & layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #111d2c, #000000);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #0ff;
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+    text-align: center;
+  }
+  
+  /* Neon heading */
+  h1, h2, h3 {
+    color: #00eaff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  
+  /* Input fields */
+  input[type="text"], input[type="number"] {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #0ff;
+    border-radius: 8px;
+    background: transparent;
+    color: #0ff;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  /* Neon buttons */
+  button {
+    background-color: #0ff;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  
+  /* Game scoreboard style */
+  .score {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #00ffc6;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #0ff;
+  }
+  
+  th {
+    background-color: #001d3d;
+    color: #00eaff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(0, 255, 255, 0.1);
+  }
+  
+  /* Links */
+  a {
+    color: #00eaff;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  a:hover {
+    text-shadow: 0 0 10px #0ff;
+  }
+  
+  /* Message styles */
+  .message {
+    margin-top: 20px;
+    color: #a3f7bf;
+    font-size: 18px;
+  }
+  
+  .result {
+    font-size: 22px;
+    font-weight: bold;
+    color: #76ff03;
+    margin-top: 20px;
+  }
+  
